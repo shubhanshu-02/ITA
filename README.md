@@ -1,1 +1,175 @@
 # ITA
+
+To calculate the mean and variance for the given probability density function (pdf), we'll follow the standard procedures using integrals.
+
+### 1. *Mean (Expected Value)*
+
+The mean (expected value) of a continuous random variable \( X \) with pdf \( p_X(x) \) is given by:
+
+\[
+\mu = \mathbb{E}[X] = \int_{-\infty}^{\infty} x \, p_X(x) \, dx
+\]
+
+For the uniform distribution \( p_X(x) \) defined on the interval \([a, b]\), the pdf is:
+
+\[
+p_X(x) = \frac{1}{b - a}, \quad \text{for } a \leq x \leq b
+\]
+
+Thus, the mean becomes:
+
+\[
+\mu = \int_{a}^{b} x \cdot \frac{1}{b - a} \, dx
+\]
+
+To solve this:
+
+\[
+\mu = \frac{1}{b - a} \int_{a}^{b} x \, dx
+\]
+
+Now, integrate \( x \):
+
+\[
+\int x \, dx = \frac{x^2}{2}
+\]
+
+So,
+
+\[
+\mu = \frac{1}{b - a} \left[ \frac{x^2}{2} \right]_a^b = \frac{1}{b - a} \left( \frac{b^2}{2} - \frac{a^2}{2} \right)
+\]
+
+Simplifying:
+
+\[
+\mu = \frac{b^2 - a^2}{2(b - a)}
+\]
+
+This can be factored as:
+
+\[
+\mu = \frac{(b - a)(b + a)}{2(b - a)} = \frac{a + b}{2}
+\]
+
+So, the *mean* is:
+
+\[
+\mu = \frac{a + b}{2}
+\]
+
+---
+
+### 2. *Variance*
+
+The variance \( \sigma^2 \) of a continuous random variable \( X \) is defined as:
+
+\[
+\sigma^2 = \mathbb{E}[X^2] - (\mathbb{E}[X])^2
+\]
+
+We already know that \( \mathbb{E}[X] = \mu = \frac{a + b}{2} \).
+
+Next, we calculate \( \mathbb{E}[X^2] \):
+
+\[
+\mathbb{E}[X^2] = \int_{a}^{b} x^2 \cdot \frac{1}{b - a} \, dx
+\]
+
+To solve this:
+
+\[
+\mathbb{E}[X^2] = \frac{1}{b - a} \int_{a}^{b} x^2 \, dx
+\]
+
+Now, integrate \( x^2 \):
+
+\[
+\int x^2 \, dx = \frac{x^3}{3}
+\]
+
+So,
+
+\[
+\mathbb{E}[X^2] = \frac{1}{b - a} \left[ \frac{x^3}{3} \right]_a^b = \frac{1}{b - a} \left( \frac{b^3}{3} - \frac{a^3}{3} \right)
+\]
+
+Simplifying:
+
+\[
+\mathbb{E}[X^2] = \frac{b^3 - a^3}{3(b - a)}
+\]
+
+We can factor the numerator:
+
+\[
+b^3 - a^3 = (b - a)(b^2 + ab + a^2)
+\]
+
+Thus,
+
+\[
+\mathbb{E}[X^2] = \frac{(b - a)(b^2 + ab + a^2)}{3(b - a)} = \frac{b^2 + ab + a^2}{3}
+\]
+
+Now, the *variance* \( \sigma^2 \) is:
+
+\[
+\sigma^2 = \mathbb{E}[X^2] - \mu^2
+\]
+
+Substituting \( \mathbb{E}[X^2] \) and \( \mu \):
+
+\[
+\sigma^2 = \frac{b^2 + ab + a^2}{3} - \left( \frac{a + b}{2} \right)^2
+\]
+
+Simplify \( \left( \frac{a + b}{2} \right)^2 \):
+
+\[
+\left( \frac{a + b}{2} \right)^2 = \frac{a^2 + 2ab + b^2}{4}
+\]
+
+Now, subtract:
+
+\[
+\sigma^2 = \frac{b^2 + ab + a^2}{3} - \frac{a^2 + 2ab + b^2}{4}
+\]
+
+To subtract, we need a common denominator. The common denominator between 3 and 4 is 12, so we rewrite the terms:
+
+\[
+\sigma^2 = \frac{4(b^2 + ab + a^2)}{12} - \frac{3(a^2 + 2ab + b^2)}{12}
+\]
+
+Now, perform the subtraction:
+
+\[
+\sigma^2 = \frac{4(b^2 + ab + a^2) - 3(a^2 + 2ab + b^2)}{12}
+\]
+
+Simplifying the numerator:
+
+\[
+4(b^2 + ab + a^2) - 3(a^2 + 2ab + b^2) = b^2 + a^2 - 2ab
+\]
+
+So,
+
+\[
+\sigma^2 = \frac{b^2 - 2ab + a^2}{12} = \frac{(b - a)^2}{12}
+\]
+
+Thus, the *variance* is:
+
+\[
+\sigma^2 = \frac{(b - a)^2}{12}
+\]
+
+---
+
+### Summary:
+- *Mean* \( \mu = \frac{a + b}{2} \)
+- *Variance* \( \sigma^2 = \frac{(b - a)^2}{12} \)
+
+These are the mean and variance for the given uniform distribution.
